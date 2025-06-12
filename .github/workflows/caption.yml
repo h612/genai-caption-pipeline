@@ -1,12 +1,14 @@
 name: Caption on Image Upload
 
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:  
+  pull_request:
     paths:
       - 'input/**'
-
 
 jobs:
   caption:
