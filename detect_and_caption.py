@@ -34,6 +34,10 @@ for fname in os.listdir("input"):
         "caption": caption,
         "objects": objects
     }
+import os
+
+# Ensure output folder exists
+os.makedirs("output", exist_ok=True)
 
 # Save output
 with open("output/captions.json", "w") as f:
