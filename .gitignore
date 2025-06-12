@@ -1,0 +1,17 @@
+genai1/
+# Ignore model weights
+*.pt
+__pycache__/
+*.pyc
+*.pyd
+*.dll
+*.lib
+*.so
+.env
+# Ignore compiled files
+__pycache__/
+*.pyc
+
+# Ignore system files
+.DS_Store
+Thumbs.db

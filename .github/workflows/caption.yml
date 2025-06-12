@@ -1,0 +1,39 @@
+name: Caption on Image Upload
+
+on:
+  push:
+    paths:
+      - 'input/**'
+
+jobs:
+  caption:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run captioning pipeline
+        run: |
+          python detect_and_caption.py
+
+      - name: Commit results
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add output/captions.json
+          git commit -m "Add updated captions"
+          git push
+          
+      - name: Run unit test
+        run: |
+          python test_pipeline.py
