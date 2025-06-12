@@ -1,0 +1,13 @@
+{
+    "sample.jpg": {
+        "caption": "a group of people walking around a bus",
+        "objects": [
+            "bus",
+            "person",
+            "person",
+            "person",
+            "person",
+            "stop sign"
+        ]
+    }
+}
