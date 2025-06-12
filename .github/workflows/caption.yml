@@ -2,8 +2,11 @@ name: Caption on Image Upload
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'input/**'
+
 
 jobs:
   caption:
